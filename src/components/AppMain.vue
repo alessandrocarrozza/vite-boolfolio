@@ -1,7 +1,11 @@
 <script>
+import myCard from "./MyCard.vue";
 import axios from "axios";
 export default {
     name: "AppMain",
+    components: {
+        myCard,
+    },
     data() {
         return {
             projects: [],
@@ -28,12 +32,8 @@ export default {
 <template>
     <div class="container">
         <div class="row">
-            <div v-for="project in projects" class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{ project.title }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ project.slug }}</h6>
-                    <p class="card-text">{{ project.content }}</p>
-                </div>
+            <div class="card" style="width: 18rem;" v-for="project in projects">
+                <myCard :title="project.title" :slug="project.slug" :content="project.content"></myCard>
             </div>
         </div>
     </div>
