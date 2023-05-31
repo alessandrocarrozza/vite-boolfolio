@@ -1,11 +1,11 @@
 <script>
 import { store } from "../store.js";
-import myCard from "./MyCard.vue";
+import MyCard from "../components/MyCard.vue";
 import axios from "axios";
 export default {
     name: "AppMain",
     components: {
-        myCard,
+        MyCard,
     },
     data() {
         return {
@@ -34,7 +34,7 @@ export default {
     <div class="container">
         <div class="row">
             <div class="card" style="width: 18rem;" v-for="project in projects">
-                <myCard :title="project.title" :slug="project.slug" :content="project.content"></myCard>
+                <MyCard :title="project.title" :slug="project.slug" :content="project.content"></MyCard>
             </div>
         </div>
     </div>

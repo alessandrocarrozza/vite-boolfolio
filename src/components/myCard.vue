@@ -1,7 +1,7 @@
 <script>
 
 export default {
-    name: "myCard",
+    name: "MyCard",
     props: {
         title: String,
         slug: String,
